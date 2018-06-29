@@ -1,84 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">    
-    <title>Invoice App</title>
+    <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
+    <title>tural.tech</title>
     <style>
-        body{
-            margin: 10% 4% 4% 4%;
+        body {
+            margin: 2.5vw 0 0 1.5vw;
+            background: whitesmoke;
         }
-        .userContainer{
+
+        header {
+            text-align: center;
+            font-size: 50px;
+            color: rgb(79, 99, 99)
+        }
+
+        .userContainer {
             display: flex;
             height: 25em;
             align-items: center;
             justify-content: center;
+            margin-top: 55px;
+
         }
-        .invoiceContainer{
-            margin-top: 4em;
-            display: flex;
-            flex-wrap: wrap;
-            width:100%;
-            height: auto;
+
+        .invoiceContainer { 
+            align-self: center;
+            margin-top: 3em;
+            min-width: 90vw;
+            max-width: 90vw;
+            max-height: 70vw;
+            min-height: 70vw;
+            font-size: 18px
         }
-        .userProfile{
-            border: 1px solid black;
+
+        .userProfile {
+            border: 5px solid rgb(79, 99, 99);
             display: flex;
             width: 60%;
             height: 100%;
         }
-        .user{
+
+        .user {
             height: auto;
+            color: rgb(87, 85, 85);
         }
-        #picContainer{
+
+        #picContainer {
             width: 40%;
-            margin: 8% 0% 8% 3%;
-            background-color: #4D6076;
+            margin: 11% 5% 5% 8%;
+            border: 8vw;
         }
-        #infoContainer{
+
+        #infoContainer {
             margin: 5% 2% 2% 2%;
-            width: 60%;
+            width: 30%;
             font-family: Nobile;
-	        font-size: 16px;
-        }
-        p{
             font-size: 22px;
+            color: rgb(114, 95, 95);
         }
-        img{
+
+        #infoContainer p {
+            font-size: 18px;
+            color: black
+        }
+
+        img {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
+            caption-side: top;
+            caption-side: bottom;
         }
-        .invoice{
-            border: 1px solid black;
-            margin: 6% 3% 0% 3%;
-            padding: 2%;
-            width: 250px;
-            height: auto;
+
+        .invoiceTitle {
+            font-size: 40px;
+            text-align: center;
+            color: rgb(114, 95, 95);
+            padding-top: 15px 0 0 0;
+        }
+
+
+        .invoice {
+            display: inline-block;
+            border: 2.5px solid rgb(79, 99, 99);
+            max-width: 25vw;
+            min-width: 25vw;
+            max-height: 27vw;
+            min-height: 27vw;
+            margin: 0.5vw;
+            padding: 0.5vw;
+            background-color: rgb(207, 207, 207)
+        }
+
+        .invoice div {
+            display: block;
+            text-align: right;
+            font-size: 18px;
+            color: rgb(116, 113, 113);
             
         }
-        .invoice > p{
-            position: relative;
-            margin: 5px;
-            left: 25%;
-            font-size: 18px;
-        }
+        
+
+
     </style>
 </head>
+
 <body>
-     
+    <header>Tural@Tech</header>
+    <div class="userContainer">
+        <div class="userProfile">
+
+            <div class="user" id="picContainer">
+                <img src="./logo-here.jpg">
+            </div>
+            <div class="user" id="infoContainer">
+                Name:
+                <p class="name"></p>
+                Company Name:
+                <p class="companyName"></p>
+                Address:
+                <p class="address"></p>
+                Email:
+                <p class="email"></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="invoiceTitle">- - - - Invoices - - - - </p>
+    <div class="invoiceContainer"></div>
     <script>
         //Fake it til you make it Database
         var user = {
-            name: ,
-            companyName: ,
-            address: ,
-            email: ,
-            picture: 
+            name: "Tural Hasanli",
+            companyName: "Tural @ Tech",
+            address: "Miami, 33139 FL",
+            email: "info@tural.tech",
+            picture: "Nippon America",
         }
-
         var invoices = [
             {
                 inv_id: "0156321",
@@ -89,6 +152,7 @@
                 cost: 3457.67,
                 paid: 3457.67
             },
+
             {
                 inv_id: "0145632",
                 companyName: user.companyName,
@@ -98,46 +162,76 @@
                 cost: 248.00,
                 paid: 150.00
             },
+
             {
-                inv_id: "0132110",
+                inv_id: "0132115",
                 companyName: user.companyName,
-                date: "6/14/2016",
-                order: "Marketing Coffee Mugs",
+                date: "6/18/2018",
+                order: "Island Novelty",
                 amount: 160,
                 cost: 414.00,
                 paid: 414.00
+            },
+
+            {
+                inv_id: "0132116",
+                companyName: user.companyName,
+                date: "6/20/2018",
+                order: "Casa Rivas",
+                amount: 160,
+                cost: 414.00,
+                paid: 414.00
+            },
+            {
+                inv_id: "1234560",
+                companyName: user.companyName,
+                date: "6/20/2018",
+                order: "Monthly Grocery",
+                amount: 160,
+                cost: 414.00,
+                paid: 414.00
+            },
+            {
+                inv_id: "1234567",
+                companyName: user.companyName,
+                date: "6/21/2018",
+                order: "Office Supplies",
+                amount: 18,
+                cost: 1200,
+                paid: 550.00
             }
-        
         ]
 
-        
         //element selectors
+        document.querySelector(".name").textContent = user.name
+        document.querySelector(".companyName").textContent = user.companyName
+        document.querySelector(".address").textContent = user.address
+        document.querySelector(".email").textContent = user.email
 
         //adding invoices
-        for(var i=0; i<invoices.length; i++){
+        for (var i = 0; i < invoices.length; i++) {
             document.querySelector('.invoiceContainer').innerHTML += `
             <div class="invoice" id=${invoices[i].inv_id}>
-                Invoice #:   <br/>    
-                <p>${} </p>
-                Company Name:   <br /> 
-                <p>${} </p>
-                Date:  <br />
-                <p> ${} </p>
-                Order:  <br />   
-                <p>${} </p>
-                Amount:   <br />     
-                <p>${} </p>
-                Cost:       <br />    
-                <p>$${} </p>
-                Paid:       <br />   
-                <p> $${} </p>
-                Owed:        <br />   
-                <p>$${} </p>
-            </div>
+                Invoice #:      
+                <div>${invoices[i].inv_id} </div>
+               Company Name:    
+              <div>${invoices[i].companyName} </div>
+                Date:  
+                <div> ${invoices[i].date} </div>
+                Order:    
+                <div>${invoices[i].order} </div>
+                Amount:       
+                <div>${invoices[i].amount} </div>
+                Cost:          
+                <div>$${invoices[i].cost} </div>
+                Paid:         
+                <div> $${invoices[i].paid} </div>
+                Owed:          
+                <div>$${invoices[i].cost - invoices[i].paid} </div>
+            </div> 
             `
         }
-
-
     </script>
 </body>
+
 </html>
